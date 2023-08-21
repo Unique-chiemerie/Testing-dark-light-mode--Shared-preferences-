@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom widget/tiles.dart';
 
 void main() {
   runApp(
@@ -11,7 +12,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: ScallF(),
     );
   }
@@ -27,21 +28,27 @@ class ScallF extends StatefulWidget {
 class _ScallFState extends State<ScallF> {
   @override
   Widget build(BuildContext context) {
-    const text = 'Welcome Blnk';
     return Scaffold(
       body: ListView(
         children: [
-          //this is the container at the top , something Like a card
-          Container(
-            height: 100,
-            width: 300,
-            margin: const EdgeInsets.all(10),
-            child: const Center(
-              child: Text(
-                text,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.account_circle_outlined),
               ),
-            ),
+            ],
           ),
+          const SizedBox(
+            height: 60,
+          ),
+          //this is the container at the top , something Like a card
+          const card(),
+          //this is the tiles that should change colour with the switch change actually
+          const ListT(),
+          const ListT(),
+          const ListT(),
         ],
       ),
     );
