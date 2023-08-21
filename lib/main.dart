@@ -31,27 +31,27 @@ class ScallF extends StatefulWidget {
 }
 
 class _ScallFState extends State<ScallF> {
+  void settingspage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const profilepage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) =>
-                          const profilepage(),
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.account_circle_outlined),
-              ),
-            ],
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            height: 50,
+            width: 50,
+            color: Colors.green,
           ),
           const SizedBox(
             height: 60,

@@ -67,9 +67,9 @@ class _ListTState extends State<ListT> {
             Container(
               height: 30,
               width: 30,
-              color: Colors.red,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
+                color: Colors.red,
               ),
             ),
             const SizedBox(
@@ -116,6 +116,7 @@ class _profilepageState extends State<profilepage> {
             ),
           ],
         ),
+        //the card widget to contain the option to switch modes
       ],
     );
   }
