@@ -23,54 +23,30 @@ class _MainAppState extends State<MainApp> {
             ? const ColorScheme.dark()
             : const ColorScheme.light(background: Colors.white),
       ),
-      home: const ScallF(),
-    );
-  }
-}
-
-class ScallF extends StatefulWidget {
-  const ScallF({super.key});
-
-  @override
-  State<ScallF> createState() => _ScallFState();
-}
-
-class _ScallFState extends State<ScallF> {
-  void settingspage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const profilepage(),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              IconButton(
-                onPressed: () {
-                  print('THE button has been pressed');
-                  settingspage();
-                },
-                icon: const Icon(Icons.account_circle_outlined),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 60,
-          ),
-          //this is the container at the top , something Like a card
-          const card(),
-          //this is the tiles that should change colour with the switch change actually
-          const ListT(),
-          const ListT(),
-          const ListT(),
-        ],
+      home: Scaffold(
+        body: ListView(
+          children: [
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    print('THE button has been pressed');
+                  },
+                  icon: const Icon(Icons.account_circle_outlined),
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                // This is the container at the top, something like a card
+                const Card(),
+                // These are the tiles that should change color with the switch change
+                const ListT(),
+                const ListT(),
+                const ListT(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
