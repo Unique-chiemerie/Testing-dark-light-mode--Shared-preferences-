@@ -95,29 +95,31 @@ class _profilepageState extends State<profilepage> {
   @override
   Widget build(BuildContext context) {
     String profile = 'Profile';
-    return ListView(
-      children: [
-        //the profile , backbutton and the rest
-        const SizedBox(
-          height: 30,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.arrow_back_ios),
-            ),
-            Text(profile),
-            const SizedBox(
-              height: 30,
-              width: 30,
-              child: Icon(Icons.more_vert_sharp),
-            ),
-          ],
-        ),
-        //the card widget to contain the option to switch modes
-      ],
+    return Scaffold(
+      body: ListView(
+        children: [
+          //the profile , backbutton and the rest
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_back_ios),
+              ),
+              Text(profile),
+              const SizedBox(
+                height: 30,
+                width: 30,
+                child: Icon(Icons.more_vert_sharp),
+              ),
+            ],
+          ),
+          //the card widget to contain the option to switch modes
+        ],
+      ),
     );
   }
 }
