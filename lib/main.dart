@@ -45,13 +45,16 @@ class _ScallFState extends State<ScallF> {
     return Scaffold(
       body: ListView(
         children: [
-          const SizedBox(
-            height: 30,
-          ),
-          Container(
-            height: 50,
-            width: 50,
-            color: Colors.green,
+          Column(
+            children: [
+              IconButton(
+                onPressed: () {
+                  print('THE button has been pressed');
+                  settingspage();
+                },
+                icon: const Icon(Icons.account_circle_outlined),
+              ),
+            ],
           ),
           const SizedBox(
             height: 60,

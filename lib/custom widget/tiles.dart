@@ -146,6 +146,8 @@ class _cardState extends State<card> {
       child: const Center(
         child: Text(
           text,
+          style: TextStyle(
+              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
     );
