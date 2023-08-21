@@ -7,9 +7,14 @@ void main() {
   );
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +23,7 @@ class MainApp extends StatelessWidget {
             ? const ColorScheme.dark()
             : const ColorScheme.light(background: Colors.white),
       ),
-      home: ScallF(),
+      home: const ScallF(),
     );
   }
 }
