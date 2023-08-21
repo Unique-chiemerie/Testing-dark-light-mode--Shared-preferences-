@@ -12,7 +12,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: isDark
+            ? const ColorScheme.dark()
+            : const ColorScheme.light(background: Colors.white),
+      ),
       home: ScallF(),
     );
   }
@@ -35,7 +40,15 @@ class _ScallFState extends State<ScallF> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const profilepage(),
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.account_circle_outlined),
               ),
             ],
