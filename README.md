@@ -6,7 +6,10 @@ I had a ton of fun doing this.
 
 ## demo/example of the app
 
-Here is a picture of the app
+![lightmode](ui/lightmode.jpg)
+![switch](ui/lightswitch.jpg)
+![darkmode](ui/darkmode.jpg)
+![switch](ui/darkswitch.jpg)
 
 ## wanna dive into flutter ?
 

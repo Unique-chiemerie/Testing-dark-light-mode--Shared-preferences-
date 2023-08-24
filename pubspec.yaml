@@ -64,6 +64,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - ui/users.png
+    - ui/darkswitch.jpg
+    - ui/darkmode.jpg
+    - ui/lightmode.jpg
+    - ui/lightswitch.jpg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
