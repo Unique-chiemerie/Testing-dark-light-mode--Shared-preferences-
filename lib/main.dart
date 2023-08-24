@@ -45,7 +45,10 @@ class MainScreen extends ConsumerWidget {
                       builder: (context) => modall(),
                     );
                   },
-                  icon: Icon(Icons.switch_right_rounded),
+                  icon: Icon(
+                    Icons.switch_right_rounded,
+                    color: isDarker ? Colors.white : Colors.black,
+                  ),
                 ),
               ),
             ],
