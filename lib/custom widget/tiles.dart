@@ -47,7 +47,6 @@ class ListT extends ConsumerWidget {
               width: 30,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.red,
               ),
               child: Image.asset('ui/users.png'),
             ),
