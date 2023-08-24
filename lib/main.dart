@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:switch_modes/custom%20widget/text.dart';
+
 import 'custom widget/tiles.dart';
 
 void main() {
@@ -17,18 +17,29 @@ void main() {
 class MainScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isDarker = ref.watch(darkmodeprovider);
     return Scaffold(
+      backgroundColor:
+          isDarker ? const Color.fromARGB(107, 0, 0, 0) : Colors.white,
       body: ListView(
         children: [
           Column(
             children: [
-              const Tess(text: 'LIGHT MODE/DARK MODE TEST'),
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                'LIGHT MODE/ DARK MODE TEST',
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 25,
+                    color: isDarker ? Colors.white : Colors.black),
+              ),
               SizedBox(
                 height: 50,
                 width: 50,
                 child: IconButton(
                   onPressed: () {
-                    print('this has been pressed');
                     showModalBottomSheet(
                       context: context,
                       builder: (context) => modall(),
