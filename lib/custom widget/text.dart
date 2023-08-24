@@ -18,3 +18,17 @@ class Tess extends ConsumerWidget {
     );
   }
 }
+
+class Headertess extends ConsumerWidget {
+  const Headertess({super.key, required this.texx});
+  final String texx;
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDarker = ref.watch(darkmodeprovider);
+    return Text(
+      texx,
+      style: GoogleFonts.nanumBrushScript(
+          fontSize: 30, color: isDarker ? Colors.white : Colors.black),
+    );
+  }
+}

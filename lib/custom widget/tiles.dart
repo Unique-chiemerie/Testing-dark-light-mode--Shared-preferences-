@@ -36,7 +36,7 @@ class ListT extends ConsumerWidget {
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: isDarker ? Colors.white : Colors.black),
+          color: isDarker ? Colors.black : Colors.white),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -46,8 +46,8 @@ class ListT extends ConsumerWidget {
               height: 30,
               width: 30,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
+                  borderRadius: BorderRadius.circular(50),
+                  color: const Color.fromARGB(92, 158, 158, 158)),
               child: Image.asset('ui/users.png'),
             ),
             const SizedBox(
@@ -75,8 +75,10 @@ class CarD extends ConsumerWidget {
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: isDarker ? Colors.white : Colors.black),
-      child: const Center(child: Tess(text: text)),
+          color: isDarker ? Colors.black : Colors.white),
+      child: const Center(
+        child: Headertess(texx: text),
+      ),
     );
   }
 }
@@ -126,7 +128,7 @@ class modall extends ConsumerWidget {
                               color: isDarker ? Colors.white : Colors.black)),
                     ),
                     Text(
-                      'Lightmode',
+                      'LightMode',
                       style: TextStyle(
                           color: isDarker ? Colors.white : Colors.black),
                     ),
