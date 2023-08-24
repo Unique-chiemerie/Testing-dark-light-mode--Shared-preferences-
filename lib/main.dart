@@ -1,52 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'custom widget/tiles.dart';
 
 void main() {
   runApp(
-    MainApp(),
+    ProviderScope(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MainScreen(),
+      ),
+    ),
   );
 }
 
-class MainApp extends StatefulWidget {
-  const MainApp({super.key});
-
+class MainScreen extends ConsumerWidget {
   @override
-  State<MainApp> createState() => _MainAppState();
-}
-
-class _MainAppState extends State<MainApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorScheme: isDark
-            ? const ColorScheme.dark()
-            : const ColorScheme.light(background: Colors.white),
-      ),
-      home: Scaffold(
-        body: ListView(
-          children: [
-            Column(
-              children: [
-                IconButton(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDarker = ref.watch(darkmodeprovider);
+    return Scaffold(
+      backgroundColor:
+          isDarker ? Colors.white : const Color.fromARGB(119, 0, 0, 0),
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              SizedBox(
+                height: 50,
+                width: 50,
+                child: IconButton(
                   onPressed: () {
-                    print('THE button has been pressed');
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => modall(),
+                    );
                   },
-                  icon: const Icon(Icons.account_circle_outlined),
+                  icon: const Icon(Icons.switch_right_rounded),
                 ),
-                const SizedBox(
-                  height: 60,
-                ),
-                // This is the container at the top, something like a card
-                const Card(),
-                // These are the tiles that should change color with the switch change
-                const ListT(),
-                const ListT(),
-                const ListT(),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          CarD(),
+          // These are the tiles that should change color with the switch change
+          ListT(),
+          ListT(),
+          ListT()
+        ],
       ),
     );
   }
